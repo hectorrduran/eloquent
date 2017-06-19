@@ -5,6 +5,12 @@
         <title>Laravel eloquent</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
+    <style type="text/css">
+      
+      body{
+        margin-top: 50px;
+      }
+    </style>
     <body>
       <nav class="navbar-inverse navbar-inverse navbar-fixed-top">
           <div class="container">
@@ -13,20 +19,27 @@
                   <li>
                       <a href="{{route('home')}}">Home</a>
                   </li>
-
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Consultas Eloquent
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="{{route('all')}}">
+                          Todos los usuarios (ALL)
+                        </a>
+                      </li>                      
+                    </ul>
+                  </li>
               </ul>
           </div>
       </nav>
-      <div class="jumbotron">
-        <div class="container">
-            <h1>Curso Eloquent ORM</h1>
-            <p>Texto</p>
-        </div>    
-      </div>
+     
       
-      <div class="container">
+     
         @yield('content');
-       </div>
+     
 
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
