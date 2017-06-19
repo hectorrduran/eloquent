@@ -12,16 +12,19 @@
 */
 
 use App\User;
+use Faker\Factory as Faker; //para crear datos dinamicos
 
 Route::get('/', function () {
    // return view('welcome');
 
+   $faker = Faker::create();
+
 	User::create([
-      'name'=>'Hector',
-      'email'=>'hectorrduran@gmail.com',
+      'name'=>$faker->name,
+      'email'=>$faker->email,
       'password'=>bcrypt('123456'), 
-      'gender'=>'m', 
-      'biografia'=>'profesor de programacion'
+      'gender'=>$faker->randomElement(['f','m']), 
+      'biografia'=>$faker->text(255),
 		]);
 
 	return 'Usuraio ingresado correctamente';
