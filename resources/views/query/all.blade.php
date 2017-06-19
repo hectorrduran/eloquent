@@ -2,7 +2,7 @@
 @section('content')
  <div class="container">
   <h1 class="page-header">
-  	Todos los Usuarios (ALL)
+  	{{$titulo}}
   </h1>
  <table class="table table-hover table-striped">
  	<thead>
@@ -15,15 +15,7 @@
  		</tr>
  	</thead>
    <tbody>
-    @foreach($users as $user)
-   	  <tr>
-   		<td>{{$user->id}}</td>
-   		<td>{{$user->name}}</td>
-   		<td>{{$user->email}}</td>
-   		<td>{{$user->gender}}</td>
-   		<td>{{$user->biografia}}</td>  	
-   	  </tr>
-   	@endforeach
+     @include('query.partial.methods')
    </tbody>
  </table>
  </div>

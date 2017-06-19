@@ -7,13 +7,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 use App\User;
 
 class QueryController extends Controller
 {
-	public function getAll()
+	public function eloquentAll()
 	{
 		$users=User::all();
-		return view('query.all', compact('users'));
+		$titulo='Todos los Usuarios(ALL)';
+		return view('query.all', compact('users', 'titulo'));
+	}
+
+	public function eloquentGet($gender)
+	{
+		$users=User::where('gender','=', $gender)->get();
+		$titulo='Todos los Usuarios(GET)';
+		return view('query.all', compact('users', 'titulo'));
 	}
 }
